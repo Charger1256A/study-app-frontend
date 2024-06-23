@@ -24,7 +24,7 @@ export const Signup: React.FC<SignupProps> = ({ setMode }) => {
             <Input name="username" isPassword={false} setValue={setUsername} style={{ marginBottom: "10px", width: "50%" }}/>
             <Input name="password" isPassword={true} setValue={setPassword} style={{ marginBottom: "10px", width: "50%" }} />
             <Input name="confirm password" isPassword={true} setValue={setConfirmPassword} style={{ marginBottom: "10px", width: "50%" }} />
-            <Button variant="contained" sx={{ width: "50%" }} className="login-button">Login</Button>
+            <Button variant="contained" sx={{ width: "50%" }} className="login-button" onClick={() => signup()}>Login</Button>
             <div className="register-container">
                 <Button sx={{ color: "white" }} onClick={() => setMode("login")}>Register</Button>
             </div>
