@@ -15,7 +15,8 @@ export const Login: React.FC<LoginProps> = ({ setMode }) => {
     const [password, setPassword] = useState<string>("");
 
     const login = async (): Promise<void> => {
-        var url: string = `${BACKEND_URL}/login`;
+        // var url: string = `${BACKEND_URL}/login`;
+        var url: string = "http://127.0.0.1:8000/login"
         const response: Response = await fetch(url, {
             method: "POST",
             headers: {
