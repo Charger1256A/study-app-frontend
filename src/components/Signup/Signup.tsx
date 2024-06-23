@@ -12,6 +12,12 @@ export const Signup: React.FC<SignupProps> = ({ setMode }) => {
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
 
+    const signup = ():void => {
+        console.log(username)
+        console.log(password)
+        console.log(confirmPassword)
+    }
+
     return (
         <div className="card-half container">
             <Typography variant="h4" gutterBottom sx={{ color: "white" }}>Signup</Typography>
