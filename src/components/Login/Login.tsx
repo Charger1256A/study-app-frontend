@@ -3,7 +3,7 @@ import { Button, Typography } from '@mui/material';
 
 import { Input } from "../Input/Input"; 
 
-// const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 
 interface LoginProps {
@@ -15,8 +15,7 @@ export const Login: React.FC<LoginProps> = ({ setMode }) => {
     const [password, setPassword] = useState<string>("");
 
     const login = async (): Promise<void> => {
-        // var url: string = `${BACKEND_URL}/login`;
-        var url: string = "http://127.0.0.1:8000/login"
+        var url: string = `${BACKEND_URL}/login`;
         const response: Response = await fetch(url, {
             method: "POST",
             headers: {
@@ -33,9 +32,11 @@ export const Login: React.FC<LoginProps> = ({ setMode }) => {
             const data = await response.json();
             const message = data.message;
             alert(message);
-        } else {
-            console.log(await response.json())
+            return
         }
+
+        
+
     }
 
     return (
