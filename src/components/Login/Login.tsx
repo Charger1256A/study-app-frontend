@@ -8,9 +8,10 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 interface LoginProps {
     setMode: (mode: string) => void;
+    setUser: (mode: string | null) => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ setMode }) => {
+export const Login: React.FC<LoginProps> = ({ setMode, setUser }) => {
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
@@ -35,8 +36,8 @@ export const Login: React.FC<LoginProps> = ({ setMode }) => {
             return
         }
 
-        
-
+        localStorage.setItem("user", username);
+        setUser(username);
     }
 
     return (

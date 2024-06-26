@@ -8,8 +8,12 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Login } from "../../components/Login/Login"; 
 import { Signup } from "../../components/Signup/Signup"; 
 
+interface LoginSignupProps {
+    setUser: (mode: string | null) => void;
+}
 
-export default function LoginSignup() {
+
+export const LoginSignup: React.FC<LoginSignupProps> = ({ setUser }) => {
     const [mode, setMode] = useState<string>("login")
 
     return (
@@ -22,7 +26,7 @@ export default function LoginSignup() {
                             timeout={500}
                             classNames="fade"
                         >
-                            {mode === "login" ? <Login setMode={setMode} /> : <Signup setMode={setMode} />}
+                            {mode === "login" ? <Login setMode={setMode} setUser={setUser} /> : <Signup setMode={setMode} setUser={setUser} />}
                         </CSSTransition>
                     </TransitionGroup>
                 </div>

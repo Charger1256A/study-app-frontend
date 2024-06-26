@@ -1,5 +1,10 @@
-export default function Home() {
+
+interface HomeProps {
+
+}
+
+export const Home: React.FC<HomeProps> = ({ }) => {
     return (
-        <h1>Home</h1>
+        <h1>Test</h1>
     )
 }
